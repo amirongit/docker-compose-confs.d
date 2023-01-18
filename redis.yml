@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  rdb:
+    image: redis:latest
+    ports:
+      - 6379:6379
+    networks:
+      - dockernet
+    restart: unless-stopped
+
+networks:
+  dockernet:
+    external: true
